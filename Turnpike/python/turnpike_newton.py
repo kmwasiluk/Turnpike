@@ -1,3 +1,4 @@
+#Kevin Wasiluk, 2018
 #performs one iteration of babylonian method, after finding least squares soln to v*v2 = D
 import numpy
 from numpy.linalg import pinv 
