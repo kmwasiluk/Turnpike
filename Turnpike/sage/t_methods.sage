@@ -4,7 +4,6 @@ from random import randrange
 from collections import Counter as mset
 from _bisect import *
 
-
 def index(a, x):
     'Locate the leftmost value exactly equal to x'
     i = bisect_left(a, x)
@@ -12,14 +11,6 @@ def index(a, x):
         return i
     else:
         return -1
-#Can probably be written in two lines, but oh well.
-def unique_elements(D):
-    ret = []
-    ret.append(D[0])
-    for i in range(1,len(D)):
-        if(D[i] != D[i-1]):
-            ret.append(D[i])
-    return ret
 
 def first_try(D):
 	Wp = [0,D[len(D)-2],D[len(D)-1]]
@@ -32,7 +23,6 @@ def gen_rand_get_ft(num,length):
 	W = first_try(D)
 	return D,W
 
-#Can be written in one line, oh well.
 def distances(A):
 	ret = []
 	for i in range(len(A)):
@@ -181,7 +171,13 @@ def ini_placements_m(req,UD,n,m):
 		return ini_placements_m(req,UD,n,m)
 	return req
 
-
+def unique_elements(D):
+    ret = []
+    ret.append(D[0])
+    for i in range(1,len(D)):
+        if(D[i] != D[i-1]):
+            ret.append(D[i])
+    return ret
 
 def ini_placements(W,req,D):
 	if(len(W) <= (1+sqrt(len(D)*8 + 1))/2):
@@ -327,7 +323,6 @@ def acaaf_turnpike(D):
     else:
         return reconstructions(D)
 
-#For testing
 def get_random_arr(num,max_length):
 	ret = []
 	while(len(ret) < num):
@@ -340,4 +335,3 @@ def get_random_arr(num,max_length):
 		for i in range(0,len(ret)):
 			ret[i] = ret[i]-sub
 	return ret
-
