@@ -251,6 +251,7 @@ def possible_placements_min(W,D):
 	ret.sort()
 	return ret
 
+#Rosenblatt-Seymour algorithm, first get the generating polynomial.
 def reconstructions(D):
 	gp = generating_polynomial(D)
 	gf = gp.factor() 
@@ -272,7 +273,7 @@ def reconstructions(D):
 	newlist = [i for n,i in enumerate(ret) if i not in ret[:n] and reversed_points(i) not in ret[:n]]
 	return newlist
 
-#Rosenblatt-Seymour algorithm, first get the generating polynomial.
+
 def reconstructions_pol(gp):
 	gf = gp.factor() 
 	r = []
