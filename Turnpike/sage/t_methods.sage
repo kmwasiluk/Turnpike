@@ -22,7 +22,7 @@ def gen_rand_get_ft(num,length):
 	D = distances(A)
 	W = first_try(D)
 	return D,W
-
+#Could be written as a one liner, but oh well.
 def distances(A):
 	ret = []
 	for i in range(len(A)):
@@ -270,6 +270,7 @@ def reconstructions(D):
 	newlist = [i for n,i in enumerate(ret) if i not in ret[:n] and reversed_points(i) not in ret[:n]]
 	return newlist
 
+#Rosenblatt-Seymour algorithm, first get the generating polynomial.
 def reconstructions_pol(gp):
 	gf = gp.factor() 
 	r = []
@@ -289,7 +290,7 @@ def reconstructions_pol(gp):
 	newlist = [i for n,i in enumerate(ret) if i not in ret[:n] and reversed_points(i) not in ret[:n]]
 	return newlist
 
-
+#Tests for homometric sets, not necessary for anything here.
 def hom_pairs(L):
 	ret = []
 	for A in L:
@@ -299,7 +300,7 @@ def hom_pairs(L):
 				ret.append(B)
 	return ret
 
-
+#Tries every multiplication of factors.
 def find_all_reconstructions(collec,collecount,ret,g,index):
 	ret.append(g)
 	if(index >= len(collec)):
@@ -322,7 +323,7 @@ def acaaf_turnpike(D):
         return I[0]
     else:
         return reconstructions(D)
-
+#For testing
 def get_random_arr(num,max_length):
 	ret = []
 	while(len(ret) < num):
