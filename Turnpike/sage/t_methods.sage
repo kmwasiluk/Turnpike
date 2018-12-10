@@ -126,6 +126,7 @@ def can_place_point_UD(k,req,UD):
 			return false
 	return true
 
+#Different implementation of sparse heuristic.
 def ini_placements_m(req,UD,n,m):
 	if(len(req) == n):
 		return req
@@ -179,6 +180,7 @@ def unique_elements(D):
             ret.append(D[i])
     return ret
 
+#Main method for the sparse heuristic.
 def ini_placements(W,req,D):
 	if(len(W) <= (1+sqrt(len(D)*8 + 1))/2):
 		return W,req
